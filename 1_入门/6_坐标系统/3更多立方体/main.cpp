@@ -223,7 +223,7 @@ int main() {
 
 		/*渲染操作*/
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);// 用颜色清空屏幕
-		glClear(GL_COLOR_BUFFER_BIT);// 清空一个缓冲位的缓冲（还不太理解）
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // 清空颜色缓存和深度缓存
 
 		/*绘制三角形*/
 		glActiveTexture(GL_TEXTURE0);
@@ -255,9 +255,6 @@ int main() {
 
 		glfwSwapBuffers(window); // 交换颜色缓冲
 		glfwPollEvents(); // 检查有没有触发事件（比如键盘输入、鼠标移动等等），更新窗口状态，并调用对应的回调函数
-
-		// 清空颜色缓存和深度缓存
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 #pragma endregion
 
